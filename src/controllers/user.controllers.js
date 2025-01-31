@@ -1,6 +1,6 @@
 import crypto from "crypto";
 import jwt from "jsonwebtoken";
-import { UserLoginType, UserRolesEnum } from "../../constants.js";
+import { UserLoginType, UserRolesEnum } from "../constants.js";
 import { User } from "../../models/user.models.js";
 import { ApiError } from "../../utils/ApiError.js";
 import { ApiResponse } from "../../utils/ApiResponse.js";
