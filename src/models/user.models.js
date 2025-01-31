@@ -3,12 +3,10 @@ import crypto from "crypto";
 import jwt from "jsonwebtoken";
 import mongoose, { Schema } from "mongoose";
 import {
-  AvailableSocialLogins,
   AvailableUserRoles,
   USER_TEMPORARY_TOKEN_EXPIRY,
-  UserLoginType,
   UserRolesEnum,
-} from "../../constants.js";
+} from "../constants.js";
 
 const userSchema = new Schema(
   {
@@ -46,11 +44,6 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: [true, "Password is required"],
-    },
-    loginType: {
-      type: String,
-      enum: AvailableSocialLogins,
-      default: UserLoginType.EMAIL_PASSWORD,
     },
     isEmailVerified: {
       type: Boolean,

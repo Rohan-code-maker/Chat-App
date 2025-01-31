@@ -1,20 +1,20 @@
 import crypto from "crypto";
 import jwt from "jsonwebtoken";
-import { UserLoginType, UserRolesEnum } from "../constants.js";
-import { User } from "../../models/user.models.js";
-import { ApiError } from "../../utils/ApiError.js";
-import { ApiResponse } from "../../utils/ApiResponse.js";
-import { asyncHandler } from "../../utils/asyncHandler.js";
+import { UserRolesEnum } from "../constants.js";
+import { User } from "../models/user.models.js";
+import { ApiError } from "../utils/ApiError.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 import {
   getLocalPath,
   getStaticFilePath,
   removeLocalFile,
-} from "../../utils/helpers.js";
+} from "../utils/helpers.js";
 import {
   emailVerificationMailgenContent,
   forgotPasswordMailgenContent,
   sendEmail,
-} from "../../utils/mail.js";
+} from "../utils/mail.js";
 
 const generateAccessAndRefreshTokens = async (userId) => {
   try {

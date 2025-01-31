@@ -7,6 +7,7 @@ export const AvailableUserRoles = Object.values(UserRolesEnum);
 
 export const DB_NAME = "chatapp";
 
+export const USER_TEMPORARY_TOKEN_EXPIRY = 20 * 60 * 1000; // 20 minutes
 
 export const ChatEventEnum = Object.freeze({
     // ? once user is ready to go
