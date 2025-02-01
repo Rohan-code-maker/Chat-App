@@ -115,18 +115,6 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new ApiError(404, "User does not exist");
   }
 
-  if (user.loginType !== UserLoginType.EMAIL_PASSWORD) {
-    // If user is registered with some other method, we will ask him/her to use the same method as registered.
-    // This shows that if user is registered with methods other than email password, he/she will not be able to login with password. Which makes password field redundant for the SSO
-    throw new ApiError(
-      400,
-      "You have previously registered using " +
-        user.loginType?.toLowerCase() +
-        ". Please use the " +
-        user.loginType?.toLowerCase() +
-        " login option to access your account."
-    );
-  }
 
   // Compare the incoming password with hashed password
   const isPasswordValid = await user.isPasswordCorrect(password);
