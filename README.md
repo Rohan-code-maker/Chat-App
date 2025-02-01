@@ -102,5 +102,5 @@ Upon running the API and making a request, the system will:
 - Enable real-time chatting through Socket.IO.
 - Store and retrieve chat messages from MongoDB.
 
-
+![Image](https://github.com/user-attachments/assets/ac03be37-01d7-4f22-98b4-2050a85e93bd)
 
